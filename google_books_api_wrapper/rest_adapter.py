@@ -1,11 +1,28 @@
+
+"""
+rest_adapter.py
+====================================
+The core module of my example project
+"""
 import requests
-from exceptions import GoogleBooksAPIException
-from models import Result
+from .exceptions import GoogleBooksAPIException
+from .models import Result
 from json import JSONDecodeError
 import logging
 
 class RestAdapter:
+    """_summary_
+    
+    :param hostname: _description_
+    :type hostname: str
+    :param ver: _description_, defaults to 'v1'
+    :type ver: str, optional
+    :param logger: _description_, defaults to None
+    :type logger: logging.Logger, optional
+"""
     def __init__(self, hostname: str, ver: str = 'v1', logger: logging.Logger = None):
+        """_summary_
+        """
         self._logger = logger or logging.getLogger(__name__)
         self.url = "https://{}/{}/".format(hostname, ver)
         
