@@ -9,11 +9,11 @@ class Result:
 
 
 
-BASE_URL = "www.googleapis.com/books"
+# BASE_URL = "www.googleapis.com/books"
 
-client = RestAdapter(hostname=BASE_URL)
+# client = RestAdapter(hostname=BASE_URL)
 
-json = client.get(endpoint="volumes",ep_params={'q': "cadcmalcmdacakdcadcmlad"})
+# json = client.get(endpoint="volumes",ep_params={'q': "cadcmalcmdacakdcadcmlad"})
     
     
-print(json)
+# print(json)
