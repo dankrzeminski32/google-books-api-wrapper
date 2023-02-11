@@ -1,0 +1,2 @@
+class GoogleBooksAPIException(Exception):
+    pass
