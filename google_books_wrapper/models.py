@@ -6,7 +6,10 @@ class Result:
         self.data = data if data else []
 
 
-
+class Book:
+    def __init__(self, title: str, authors: list[str]):
+        self.title = title
+        self.authors = authors
 
 
 # BASE_URL = "www.googleapis.com/books"
