@@ -13,9 +13,9 @@ This includes the authors, official title and subtitles, Publication date, Publi
    :maxdepth: 2
    :caption: Contents:
 
-.. automodule:: google_books_api_wrapper.rest_adapter
+.. autoclass:: google_books_api_wrapper.rest_adapter
     :members:
-.. automodule:: google_books_api_wrapper.exceptions
+.. autoclass:: google_books_api_wrapper.exceptions
     :members:
 .. autoclass:: google_books_api_wrapper.models.Book
     :members:
