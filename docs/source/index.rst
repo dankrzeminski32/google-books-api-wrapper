@@ -19,7 +19,7 @@ GoogleBooksAPI Class
 .. autoclass:: google_books_api_wrapper.api.GoogleBooksAPI
     :members:
 
-HttpResponse Class
+HttpResult Class
 ==================
 .. autoclass:: google_books_api_wrapper.api.models.HttpResult
     :members:
