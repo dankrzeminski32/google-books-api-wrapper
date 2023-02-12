@@ -7,7 +7,7 @@ Welcome to Google Books API Wrapper's documentation!
 ====================================================
 
 **google-books-api-wrapper** is a python web api wrapper for the Google Books api. I developed this mostly for using the unauthenticated requests for searching books and getting their relevant details.
-This includes the authors, official title and subtitles, Publication date, Publisher, Genre, etc. Test
+This includes the authors, official title and subtitles, Publication date, Publisher, Genre, etc.
 
 .. toctree::
    :maxdepth: 2
