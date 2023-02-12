@@ -9,7 +9,7 @@ class HttpResult:
         :param data: http json response data, defaults to None
         :type data: list[dict], optional
     """
-    def __init__(self, status_code: int, message: str = '', data: list[dict] = None):
+    def __init__(self, status_code: int, message: str = '', data: dict = None):
         """_summary_
 
         :param status_code: _description_
@@ -21,7 +21,7 @@ class HttpResult:
         """
         self.status_code = int(status_code)
         self.message = str(message)
-        self.data = data if data else []
+        self.data = data if data else {}
 
 
 class Book:

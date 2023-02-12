@@ -40,8 +40,8 @@ class RestAdapter:
         :rtype: HttpResult
         """
         full_url = self.url + endpoint
-        log_line_pre = f"method={http_method}, url={full_url}, params={ep_params}"
-        log_line_post = ', '.join((log_line_pre, "success={}, status_code={}, message={}"))
+        log_line_pre = f"method={http_method}, url={full_url}, params={{{ep_params}}}"
+        log_line_post = ', '.join((log_line_pre, 'success={}, status_code={}, message={}'))
         try:
             self._logger.debug(msg=log_line_pre)
             response = requests.request(method=http_method, url=full_url, params=ep_params, json=data)
@@ -53,7 +53,7 @@ class RestAdapter:
         except(ValueError, JSONDecodeError) as e:
             self._logger.error(msg=log_line_post.format(False, None, e))
             raise GoogleBooksAPIException("Bad JSON in response") from e
-        is_success = 299 >= response.status_code >= 200     # 200 to 299 is OK
+        is_success = 299 >= response.status_code >= 200    # 200 to 299 is OK
         log_line = log_line_post.format(is_success, response.status_code, response.reason)
         if is_success:
             self._logger.debug(msg=log_line)
