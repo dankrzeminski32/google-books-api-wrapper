@@ -19,6 +19,11 @@ GoogleBooksAPI Class
 .. autoclass:: google_books_api_wrapper.api.GoogleBooksAPI
     :members:
 
+HttpResponse Class
+==================
+.. autoclass:: google_books_api_wrapper.api.models.HttpResponse
+    :members:
+
 RestAdapter Class
 ==================
 .. autoclass:: google_books_api_wrapper.rest_adapter.RestAdapter
