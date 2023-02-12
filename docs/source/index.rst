@@ -13,17 +13,12 @@ This includes the authors, official title and subtitles, Publication date, Publi
    :maxdepth: 2
    :caption: Contents:
 
-.. automodule:: google_books_api_wrapper.rest_adapter
+RestAdapter Class
+==================
+.. autoclass:: google_books_api_wrapper.rest_adapter.RestAdapter
     :members:
-.. automodule:: google_books_api_wrapper.exceptions
-    :members:
-.. autoclass:: google_books_api_wrapper.models.Book
-    :members:
-
 
 Indices and tables
 ==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. autoclass:: google_books_api_wrapper.models.Book
+    :members:

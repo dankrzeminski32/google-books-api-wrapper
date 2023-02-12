@@ -11,28 +11,42 @@ from json import JSONDecodeError
 import logging
 
 class RestAdapter:
-    """_summary_
+    """Low level Module used to handle incoming and outgoing web requests. Handles API configuration details.
     
-    :param hostname: _description_
+    :param hostname: base web path of the API
     :type hostname: str
-    :param ver: _description_, defaults to 'v1'
+    :param ver: API version number, defaults to 'v1'
     :type ver: str, optional
-    :param logger: _description_, defaults to None
+    :param logger: Logging configuration, defaults to None
     :type logger: logging.Logger, optional
 """
     def __init__(self, hostname: str, ver: str = 'v1', logger: logging.Logger = None):
-        """_summary_
+        """RestAdapter Constructor
         """
         self._logger = logger or logging.getLogger(__name__)
         self.url = "https://{}/{}/".format(hostname, ver)
         
-    def _do(self, http_method: str, endpoint: str, ep_params: dict = None):
+    def _do(self, http_method: str, endpoint: str, ep_params: dict = None, data: dict = None) -> Result:
+        """Private method used for sending and recieving requests
+
+        :param http_method: http method for communicating with host (e.g. GET, POST)
+        :type http_method: str
+        :param endpoint: api resource endpoint (e.g. /books)
+        :type endpoint: str
+        :param ep_params: api parameters to send to endpoint, defaults to None
+        :type ep_params: dict, optional
+        :raises GoogleBooksAPIException: Exception raised when there is a failure to communicate with Google Books web endpoint
+        :raises GoogleBooksAPIException: Exception raised when there is a failure to communicate with Google Books web endpoint
+        :raises GoogleBooksAPIException: Exception raised when there is a failure to communicate with Google Books web endpoint
+        :return: returns a Result object
+        :rtype: Result
+        """
         full_url = self.url + endpoint
         log_line_pre = f"method={http_method}, url={full_url}, params={ep_params}"
         log_line_post = ', '.join((log_line_pre, "success={}, status_code={}, message={}"))
         try:
             self._logger.debug(msg=log_line_pre)
-            response = requests.request(method=http_method, url=full_url, params=ep_params)
+            response = requests.request(method=http_method, url=full_url, params=ep_params, json=data)
         except requests.exceptions.RequestException as e:
             self._logger.error(msg=(str(e)))
             raise GoogleBooksAPIException("Request failed") from e
@@ -49,8 +63,28 @@ class RestAdapter:
         self._logger.error(msg=log_line)
         raise GoogleBooksAPIException(f"{response.status_code}: {response.reason}")
     
-    def get(self, endpoint: str, ep_params: dict = None) -> list[dict]:
+    def get(self, endpoint: str, ep_params: dict = None) -> Result:
+        """Sends a GET request to provided resource endpoint
+
+        :param endpoint: api resource endpoint (e.g. /books)
+        :type endpoint: str
+        :param ep_params: api parameters to send to endpoint, defaults to None
+        :type ep_params: dict, optional
+        :return: Returns a Result object
+        :rtype: Result
+        """
         return self._do(http_method='GET', endpoint=endpoint, ep_params=ep_params)
 
-    def post(self, endpoint: str, ep_params: dict = None, data: dict = None):
+    def post(self, endpoint: str, ep_params: dict = None, data: dict = None) -> Result:
+        """Sends a POST request to provided resource endpoint
+                
+        :param endpoint: api resource endpoint (e.g. /books)
+        :type endpoint: str
+        :param ep_params: api parameters to send to endpoint, defaults to None
+        :type ep_params: dict, optional
+        :param data: POST request data, defaults to None
+        :type data: dict, optional
+        :return: Returns a Result object
+        :rtype: Result
+        """
         return self._do(http_method='POST', endpoint=endpoint, ep_params=ep_params, data=data)
