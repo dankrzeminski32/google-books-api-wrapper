@@ -19,7 +19,7 @@ import sys, os
 sys.path.insert(0, os.path.abspath('..'))
 
 extensions = ['sphinx.ext.autodoc']
-
+master_doc = ''
 templates_path = ['_templates']
 exclude_patterns = []
 
