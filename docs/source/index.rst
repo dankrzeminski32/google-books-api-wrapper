@@ -13,12 +13,13 @@ This includes the authors, official title and subtitles, Publication date, Publi
    :maxdepth: 2
    :caption: Contents:
 
+
+GoogleBooksAPI Class
+==================
+.. autoclass:: google_books_api_wrapper.api.GoogleBooksAPI
+    :members:
+
 RestAdapter Class
 ==================
 .. autoclass:: google_books_api_wrapper.rest_adapter.RestAdapter
-    :members:
-
-Indices and tables
-==================
-.. autoclass:: google_books_api_wrapper.models.Book
     :members:

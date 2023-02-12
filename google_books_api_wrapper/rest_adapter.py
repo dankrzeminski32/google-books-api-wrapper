@@ -38,7 +38,7 @@ class RestAdapter:
         :raises GoogleBooksAPIException: Exception raised when there is a failure to communicate with Google Books web endpoint
         :raises GoogleBooksAPIException: Exception raised when there is a failure to communicate with Google Books web endpoint
         :raises GoogleBooksAPIException: Exception raised when there is a failure to communicate with Google Books web endpoint
-        :return: returns a Result object
+        :return: a Result object
         :rtype: Result
         """
         full_url = self.url + endpoint
@@ -70,7 +70,7 @@ class RestAdapter:
         :type endpoint: str
         :param ep_params: api parameters to send to endpoint, defaults to None
         :type ep_params: dict, optional
-        :return: Returns a Result object
+        :return: a Result object
         :rtype: Result
         """
         return self._do(http_method='GET', endpoint=endpoint, ep_params=ep_params)
@@ -84,7 +84,7 @@ class RestAdapter:
         :type ep_params: dict, optional
         :param data: POST request data, defaults to None
         :type data: dict, optional
-        :return: Returns a Result object
+        :return: a Result object
         :rtype: Result
         """
         return self._do(http_method='POST', endpoint=endpoint, ep_params=ep_params, data=data)
