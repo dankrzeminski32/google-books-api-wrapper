@@ -1,5 +1,5 @@
 import logging
-from rest_adapter import RestAdapter
+from .rest_adapter import RestAdapter
 
 class GoogleBooksAPI:
     """Wrapper around the Google Books REST API
