@@ -19,7 +19,7 @@ class RestAdapter:
     :type ver: str, optional
     :param logger: Logging configuration, defaults to None
     :type logger: logging.Logger, optional
-"""
+    """
     def __init__(self, hostname: str, ver: str = 'v1', logger: logging.Logger = None):
         """RestAdapter Constructor
         """
@@ -35,8 +35,6 @@ class RestAdapter:
         :type endpoint: str
         :param ep_params: api parameters to send to endpoint, defaults to None
         :type ep_params: dict, optional
-        :raises GoogleBooksAPIException: Exception raised when there is a failure to communicate with Google Books web endpoint
-        :raises GoogleBooksAPIException: Exception raised when there is a failure to communicate with Google Books web endpoint
         :raises GoogleBooksAPIException: Exception raised when there is a failure to communicate with Google Books web endpoint
         :return: a HttpResult object
         :rtype: HttpResult
