@@ -20,7 +20,6 @@ class HttpResult:
         :type data: list[dict], optional
         """
         self.status_code = int(status_code)
-        self.message = str(message)
         self.data = data if data else {}
 
 
