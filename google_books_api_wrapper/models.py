@@ -27,13 +27,3 @@ class Book:
     def __init__(self, title: str, authors: list[str]):
         self.title = title
         self.authors = authors
-
-
-# BASE_URL = "www.googleapis.com/books"
-
-# client = RestAdapter(hostname=BASE_URL)
-
-# json = client.get(endpoint="volumes",ep_params={'q': "cadcmalcmdacakdcadcmlad"})
-    
-    
-# print(json)
