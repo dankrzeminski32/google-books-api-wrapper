@@ -11,15 +11,14 @@ class HttpResult:
     """
 
     def __init__(self, status_code: int, data: dict = None):
-        """Constructor
-        """
+        """Constructor"""
         self.status_code = int(status_code)
         self.data = data if data else {}
 
 
 class Book:
     """Represents a Book object, data derived from Google Books Api Response
-    
+
     :param title: Main title of the book
     :type title: str
     :param authors: Authors/Writers of the book
@@ -45,6 +44,7 @@ class Book:
     :param large_thumbnail: Large thumbnail img link from Google, defaults to None
     :type large_thumbnail: str, optional
     """
+
     def __init__(
         self,
         title: str,
@@ -60,8 +60,7 @@ class Book:
         small_thumbnail: str = None,
         large_thumbnail: str = None,
     ):
-        """Class Constructor
-        """
+        """Class Constructor"""
         self.title = title
         self.authors = authors
         self.subtitle = subtitle
@@ -74,4 +73,3 @@ class Book:
         self.categories = categories
         self.small_thumbnail = small_thumbnail
         self.large_thumbnail = large_thumbnail
-
