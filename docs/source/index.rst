@@ -15,16 +15,21 @@ This includes the authors, official title and subtitles, Publication date, Publi
 
 
 GoogleBooksAPI Class
-==================
+====================================================
 .. autoclass:: google_books_api_wrapper.api.GoogleBooksAPI
     :members:
 
+Book Class
+====================================================
+.. autoclass:: google_books_api_wrapper.models.Book
+    :members:
+
 HttpResult Class
-==================
-.. autoclass:: google_books_api_wrapper.api.models.HttpResult
+====================================================
+.. autoclass:: google_books_api_wrapper.models.HttpResult
     :members:
 
 RestAdapter Class
-==================
+====================================================
 .. autoclass:: google_books_api_wrapper.rest_adapter.RestAdapter
     :members:
