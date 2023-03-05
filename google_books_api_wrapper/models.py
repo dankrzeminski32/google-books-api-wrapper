@@ -1,3 +1,4 @@
+from __future__ import annotations
 from datetime import date
 
 
@@ -75,7 +76,14 @@ class Book:
         self.large_thumbnail = large_thumbnail
 
     @classmethod
-    def from_api_response_item(cls, api_response_item: HttpResult):
+    def from_api_response_item(cls, api_response_item: HttpResult) -> Book:
+        """Generates a Book object from Google Books Web API response
+
+        :param api_response_item: Response item from hitting the Google Books API Endpoint
+        :type api_response_item: HttpResult
+        :return: A Book Object
+        :rtype: Book
+        """
         from .api import GoogleBooksApiParser
 
         volume_info = api_response_item.get("volumeInfo", {})
@@ -101,4 +109,43 @@ class Book:
         )
 
     def __repr__(self):
-        return str(self.__dict__)
+        return f"Book(title={self.title}, authors={self.authors})"
+    
+
+class BookSearchResultSet:
+    """Represents search results coming from the Google Books Web API
+
+    :param books: A list of book objects, defaults to None
+    :type books: list[Book], optional
+    """
+    def __init__(self, books: list[Book]=None):
+        """Class Constructor."""
+        self.books = books or []
+    
+    def get_best_match(self) -> Book:
+        """Returns the closest match to the search query
+
+        :return: A Book object
+        :rtype: Book
+        """
+        return self.books[0] if self.total_results > 0 else None
+    
+    def get_all_results(self) -> list[Book]:
+        """Returns a list of books returned for the search query
+
+        :return: A list of Book objects
+        :rtype: list[Book]
+        """
+        return self.books
+    
+    @property
+    def total_results(self) -> int:
+        """Total results found for search query
+
+        :return: Number of results found
+        :rtype: int
+        """
+        return len(self.books)
+    
+    def __repr__(self):
+        return f"BookSearchResultSet(total_size={self.total_results})"
