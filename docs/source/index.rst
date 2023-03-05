@@ -24,6 +24,16 @@ Book Class
 .. autoclass:: google_books_api_wrapper.models.Book
     :members:
 
+BookSearchResultSet Class
+====================================================
+.. autoclass:: google_books_api_wrapper.models.BookSearchResultSet
+    :members:
+
+GoogleBooksApiParser Class
+====================================================
+.. autoclass:: google_books_api_wrapper.api.GoogleBooksApiParser
+    :members:
+
 HttpResult Class
 ====================================================
 .. autoclass:: google_books_api_wrapper.models.HttpResult
