@@ -30,10 +30,24 @@ class GoogleBooksAPI:
         )
         result_set = GoogleBooksApiParser.get_books_from_response(response)
         return result_set
-
-    def get_book(self):
+    
+    def get_book_by_isbn13(self):
         pass
-
+    
+    def get_book_by_isbn10(self):
+        pass
+    
+    def get_book_by_title(self):
+        pass
+    
+    def get_books_by_author(self):
+        pass
+    
+    def get_books_by_publisher(self):
+        pass
+    
+    def get_books_by_subject(self):
+        pass
 
 class GoogleBooksApiParser:
     @staticmethod
