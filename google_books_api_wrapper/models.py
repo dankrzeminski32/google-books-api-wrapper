@@ -1,6 +1,5 @@
 from datetime import date
 
-
 class HttpResult:
     """Low-level custom http result object
 
@@ -73,3 +72,26 @@ class Book:
         self.categories = categories
         self.small_thumbnail = small_thumbnail
         self.large_thumbnail = large_thumbnail
+
+    @classmethod
+    def from_api_response_item(cls, api_response_item: HttpResult):
+        from .api import GoogleBooksApiParser
+        volume_info = api_response_item.get("volumeInfo", {})
+        industry_ids = volume_info.get("industryIdentifiers", [])
+        image_links = volume_info.get("imageLinks", {})
+        return cls(
+            title = volume_info.get("title", None),
+            authors = volume_info.get("authors", None),
+            subtitle = volume_info.get("subtitle", None),
+            publisher = volume_info.get("publisher", None),
+            published_date = volume_info.get("publishedDate", None),
+            description = volume_info.get("description", None),
+            ISBN_13 = GoogleBooksApiParser.get_isbn_from_id_list(industry_ids, isbn_num=13),
+            ISBN_10 = GoogleBooksApiParser.get_isbn_from_id_list(industry_ids, isbn_num=10),
+            page_count = volume_info.get("pageCount", None),
+            categories = volume_info.get("categories", None),
+            small_thumbnail = image_links.get("smallThumbnail", None),
+            large_thumbnail = image_links.get("thumbnail", None))       
+        
+    def __repr__(self):
+        return str(self.__dict__)

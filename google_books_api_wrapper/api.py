@@ -1,7 +1,8 @@
 import logging
 from .rest_adapter import RestAdapter
 from .constants import GOOGLE_BOOKS_API_URL
-
+from .models import Book, HttpResult
+from .exceptions import NoBooksFoundFromSearch
 
 class GoogleBooksAPI:
     """Wrapper around the Google Books REST API
@@ -23,8 +24,28 @@ class GoogleBooksAPI:
         """Constructor for GoogleBooksAPI"""
         self._rest_adapter = RestAdapter(hostname, ver, logger)
 
-    def search_book(self, search_term: str):
-        return self._rest_adapter.get(endpoint="volumes", ep_params={"q": search_term})
-
+    def search_book(self, search_term: str) -> list[Book]:
+        response = self._rest_adapter.get(endpoint="volumes", ep_params={"q": search_term})
+        results = GoogleBooksApiParser.get_books_from_response(response)
+        return results
+        
     def get_book(self):
         pass
+
+class GoogleBooksApiParser:
+    
+    @staticmethod
+    def get_books_from_response(response: HttpResult) -> list[Book]:
+        if response.data['totalItems'] > 0:
+            return [Book.from_api_response_item(book_result) for book_result in response.data['items']]
+        else:
+            raise NoBooksFoundFromSearch("Google books API returned 0 results for your search request")
+        
+    @staticmethod
+    def get_isbn_from_id_list(industry_ids: list[dict[str, str]], *, isbn_num: int):
+        for id in industry_ids:
+            if id['type'] == "ISBN_" + str(isbn_num):
+                return id['identifier']
+        return None
+            
+        
