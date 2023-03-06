@@ -7,6 +7,7 @@ client = GoogleBooksAPI()
 response = client.get_book_by_isbn13(9780735211292)
 
 import logging
+
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
 

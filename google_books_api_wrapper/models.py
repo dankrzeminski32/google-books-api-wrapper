@@ -110,7 +110,7 @@ class Book:
 
     def __repr__(self):
         return f"Book(title={self.title}, authors={self.authors})"
-    
+
 
 class BookSearchResultSet:
     """Represents search results coming from the Google Books Web API
@@ -118,10 +118,11 @@ class BookSearchResultSet:
     :param books: A list of book objects, defaults to None
     :type books: list[Book], optional
     """
-    def __init__(self, books: list[Book]=None):
+
+    def __init__(self, books: list[Book] = None):
         """Class Constructor."""
         self.books = books or []
-    
+
     def get_best_match(self) -> Book:
         """Returns the closest match to the search query
 
@@ -129,7 +130,7 @@ class BookSearchResultSet:
         :rtype: Book
         """
         return self.books[0] if self.total_results > 0 else None
-    
+
     def get_all_results(self) -> list[Book]:
         """Returns a list of books returned for the search query
 
@@ -137,7 +138,7 @@ class BookSearchResultSet:
         :rtype: list[Book]
         """
         return self.books
-    
+
     @property
     def total_results(self) -> int:
         """Total results found for search query
@@ -146,6 +147,6 @@ class BookSearchResultSet:
         :rtype: int
         """
         return len(self.books)
-    
+
     def __repr__(self):
         return f"BookSearchResultSet(total_size={self.total_results})"
