@@ -1,7 +1,8 @@
 import logging
 from .rest_adapter import RestAdapter
-from .constants import GOOGLE_BOOKS_API_URL
+from .constants import GOOGLE_BOOKS_API_URL, GoogleBookAPISearchFilters
 from .models import Book, HttpResult, BookSearchResultSet
+import urllib.parse
 
 
 class GoogleBooksAPI:
@@ -26,14 +27,18 @@ class GoogleBooksAPI:
 
     def search_book(self, search_term: str) -> BookSearchResultSet:
         response = self._rest_adapter.get(
-            endpoint="volumes", ep_params={"q": search_term}
+            endpoint="volumes", ep_params=GoogleBooksSearchParams(search_term=search_term).generate()
         )
         result_set = GoogleBooksApiParser.get_books_from_response(response)
         return result_set
     
-    def get_book_by_isbn13(self):
-        pass
-    
+    def get_book_by_isbn13(self, isbn13: int):
+        response = self._rest_adapter.get(
+            endpoint="volumes", ep_params={"q": "" + GoogleBookAPISearchFilters.ISBN + str(isbn13)}
+        )
+        result_set = GoogleBooksApiParser.get_books_from_response(response)
+        return result_set
+        
     def get_book_by_isbn10(self):
         pass
     
@@ -49,6 +54,39 @@ class GoogleBooksAPI:
     def get_books_by_subject(self):
         pass
 
+
+class GoogleBooksSearchParams:
+    def __init__(self, *, title:str=None, isbn: int=None, publisher: str=None, author: str=None, subject: str=None, search_term: str = ""):
+        self.search_term = search_term
+        self.title = title
+        self.isbn = isbn
+        self.publisher = publisher
+        self.author = author
+        self.subject = subject
+    
+    def generate(self):
+        filters = self._get_used_filters()
+        search_term_with_filters:str = None
+        if len(filters) > 0:
+            search_term_with_filters = self._get_search_term_with_filters()
+        return {
+            "q": search_term_with_filters or self.search_term
+        }
+        
+    def _get_used_filters(self):
+        used_properties = []
+        for property in vars(self):
+            if property == 'search_term':
+                continue
+            used_properties.append(property) if self.__getattribute__(property)!=None else ...
+        return used_properties
+            
+    def _get_search_term_with_filters(self) -> str:
+        search_term_with_filters: str = self.search_term
+        for property in self._get_used_filters():
+            search_term_with_filters = search_term_with_filters + GoogleBookAPISearchFilters[property.upper()] + str(self.__getattribute__(property))
+        return urllib.parse.urlencode(search_term_with_filters, safe=':+')
+        
 class GoogleBooksApiParser:
     @staticmethod
     def get_books_from_response(response: HttpResult) -> BookSearchResultSet:
