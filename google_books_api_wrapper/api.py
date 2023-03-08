@@ -46,16 +46,11 @@ class GoogleBooksAPI:
         result_set = GoogleBooksApiParser.get_books_from_response(response)
         return result_set
 
-    def get_book_by_isbn13(self, isbn13: int):
-        response = self._rest_adapter.get(
-            endpoint="volumes",
-            ep_params=GoogleBooksSearchParams(isbn=isbn13).generate(),
-        )
-        result_set = GoogleBooksApiParser.get_books_from_response(response)
-        return result_set.get_best_match()
+    def get_book_by_isbn13(self, isbn13: int) -> int:
+        return self._get_book_by_isbn(isbn13)
 
-    def get_book_by_isbn10(self):
-        pass
+    def get_book_by_isbn10(self, isbn10: int) -> int:
+        return self._get_book_by_isbn(isbn10)
 
     def get_book_by_title(self):
         pass
@@ -68,6 +63,14 @@ class GoogleBooksAPI:
 
     def get_books_by_subject(self):
         pass
+    
+    def _get_book_by_isbn(self, isbn_num) -> Book:
+        response = self._rest_adapter.get(
+        endpoint="volumes",
+        ep_params=GoogleBooksSearchParams(isbn=isbn_num).generate(),
+        )
+        result_set = GoogleBooksApiParser.get_books_from_response(response)
+        return result_set.get_best_match()
 
 
 class GoogleBooksApiParser:

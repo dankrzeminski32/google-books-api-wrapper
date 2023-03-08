@@ -23,6 +23,25 @@ def test_good_get_book_by_isbn13_returns_correct():
     assert isinstance(book, Book)
     
 @responses.activate
+def test_good_get_book_by_isbn10_returns_correct():
+    responses.add(
+        responses.GET,
+        "https://" + GOOGLE_BOOKS_API_URL + "/v1/volumes",
+        json={
+    "kind": "books#volumes",
+    "totalItems": 200,
+    "items": [
+        {"volumeInfo": {"title": "harry potter"}}]
+        },
+        status=200,
+    )
+    client = GoogleBooksAPI()
+    book = client.get_book_by_isbn10(1234566)
+    assert book.title=="harry potter"
+    assert isinstance(book, Book)
+    
+    
+@responses.activate
 def test_good_search_request_returns_correct():
     responses.add(
         responses.GET,
