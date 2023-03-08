@@ -1,0 +1,710 @@
+{
+    "kind": "books#volumes",
+    "totalItems": 200,
+    "items": [
+        {
+            "kind": "books#volume",
+            "id": "rAuREAAAQBAJ",
+            "etag": "VF57Yir80bA",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/rAuREAAAQBAJ",
+            "volumeInfo": {
+                "title": "The Penguin History of the World",
+                "subtitle": "Sixth Edition",
+                "authors": ["J. M. Roberts"],
+                "publisher": "National Geographic Books",
+                "publishedDate": "2014-09-30",
+                "description": "The completely updated edition of J. M. Roberts and Odd Arne Westad's widely acclaimed, landmark bestseller The Penguin History of the World For generations of readers The Penguin History of the World has been one of the great cultural experiences - the entire story of human endeavour laid out in all its grandeur and folly, drama and pain in a single authoritative book. Now, for the first time, it has been completely overhauled for its 6th edition - not just bringing it up to date, but revising it throughout in the light of new research and discoveries, such as the revolution in our understanding of many civilizations in the Ancient World. The closing sections of the book reflect what now seems to be the inexorable rise of Asia and the increasingly troubled situation in the West. About the authors: J.M. Roberts, CBE, published The Penguin History of the World in 1976 to immediate acclaim. His other major books include The Paris Commune from the Right, The Triumph of the West (which was also a successful television series), The Penguin History of Europe and The Penguin History of the Twentieth Century. He died in 2003. Odd Arne Westad, FBA, is Professor of International History at the London School of Economics. He has published fifteen books on modern and contemporary international history, among them The Global Cold War, which won the Bancroft Prize, and Decisive Encounters, a standard history of the Chinese civil war. He also served as general co-editor of the Cambridge History of the Cold War.",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781846144431"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1846144434"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 0,
+                "printType": "BOOK",
+                "categories": ["History"],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "preview-1.0.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=rAuREAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=rAuREAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=rAuREAAAQBAJ&dq=inpublisher:penguin&hl=&cd=1&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=rAuREAAAQBAJ&dq=inpublisher:penguin&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/The_Penguin_History_of_the_World.html?hl=&id=rAuREAAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "NO_PAGES",
+                "embeddable": false,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=rAuREAAAQBAJ&hl=&source=gbs_api",
+                "accessViewStatus": "NONE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "The completely updated edition of J. M. Roberts and Odd Arne Westad&#39;s widely acclaimed, landmark bestseller The Penguin History of the World For generations of readers The Penguin History of the World has been one of the great cultural ..."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "yIFPEAAAQBAJ",
+            "etag": "t2ZDb+HdBOk",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/yIFPEAAAQBAJ",
+            "volumeInfo": {
+                "title": "The New Penguin Russian Course",
+                "subtitle": "A Complete Course for Beginners",
+                "authors": ["Nicholas J. Brown"],
+                "publisher": "Penguin",
+                "publishedDate": "1996-12-01",
+                "description": "Whether you’re learning alone or attending classes, you’ll find this complete Russian language course for beginners both accessible and indispensable. Designed to provide the student with an excellent command of basic Russian (the equivalent of A’ level standard) the book features thirty lessons punctuated by revision exercises to ensure you have fully understood what you have learned. The emphasis is on acquiring vocabulary, experiencing conversational language and learning useful grammar. The book also includes a vocabulary of 1,500 words and a glossary of grammatical terms.",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780140120417"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0140120416"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 0,
+                "printType": "BOOK",
+                "categories": ["Foreign Language Study"],
+                "averageRating": 5,
+                "ratingsCount": 1,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "preview-1.0.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=yIFPEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=yIFPEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=yIFPEAAAQBAJ&dq=inpublisher:penguin&hl=&cd=2&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=yIFPEAAAQBAJ&dq=inpublisher:penguin&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/The_New_Penguin_Russian_Course.html?hl=&id=yIFPEAAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "NO_PAGES",
+                "embeddable": false,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=yIFPEAAAQBAJ&hl=&source=gbs_api",
+                "accessViewStatus": "NONE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "The emphasis is on acquiring vocabulary, experiencing conversational language and learning useful grammar. The book also includes a vocabulary of 1,500 words and a glossary of grammatical terms."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "ob9AEAAAQBAJ",
+            "etag": "slHjWQR6qu0",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/ob9AEAAAQBAJ",
+            "volumeInfo": {
+                "title": "The Portable Edgar Allan Poe",
+                "authors": ["Edgar Allan Poe"],
+                "publisher": "Penguin",
+                "publishedDate": "2006-10-03",
+                "description": "The Portable Edgar Allan Poe compiles Poe's greatest writings: tales of fantasy, terror, death, revenge, murder, and mystery, including \"The Pit and the Pendulum,\" \"The Fall of the House of Usher,\" \"The Cask of Amontillado,\" \"The Masque of the Red Death,\" and \"The Murders in the Rue Morgue,\" the world's first detective story. In addition, this volume offers letters, articles, criticism, visionary poetry, and a selection of random \"opinions\" on fancy and the imagination, music and poetry, intuition and sundry other topics. For more than seventy years, Penguin has been the leading publisher of classic literature in the English-speaking world. With more than 1,700 titles, Penguin Classics represents a global bookshelf of the best works throughout history and across genres and disciplines. Readers trust the series to provide authoritative texts enhanced by introductions and notes by distinguished scholars and contemporary authors, as well as up-to-date translations by award-winning translators.",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780143039914"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0143039911"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": false
+                },
+                "pageCount": 676,
+                "printType": "BOOK",
+                "categories": ["Fiction"],
+                "averageRating": 4,
+                "ratingsCount": 4,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "preview-1.0.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=ob9AEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=ob9AEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=ob9AEAAAQBAJ&printsec=frontcover&dq=inpublisher:penguin&hl=&cd=3&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=ob9AEAAAQBAJ&dq=inpublisher:penguin&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/The_Portable_Edgar_Allan_Poe.html?hl=&id=ob9AEAAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=ob9AEAAAQBAJ&hl=&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "In addition, this volume offers letters, articles, criticism, visionary poetry, and a selection of random &quot;opinions&quot; on fancy and the imagination, music and poetry, intuition and sundry other topics."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "nIVPEAAAQBAJ",
+            "etag": "O7K7VRZrX58",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/nIVPEAAAQBAJ",
+            "volumeInfo": {
+                "title": "The Penguin History of Europe",
+                "authors": ["J. M. Roberts"],
+                "publisher": "Penguin",
+                "publishedDate": "1998-12-01",
+                "description": "Comprehensive in its scope and brilliantly readable, this is a superb follow-up to the author's bestselling Penguin History of the World. Beginning with prehistory and the early civilizations of the Aegean, The Penguin History of Europe traces the development of European identity in its many guises, through the age of Christendom, the Middle Ages, early Modern history and the old European order.",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780140265613"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0140265619"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 0,
+                "printType": "BOOK",
+                "categories": ["History"],
+                "averageRating": 4,
+                "ratingsCount": 2,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "preview-1.0.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=nIVPEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=nIVPEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=nIVPEAAAQBAJ&dq=inpublisher:penguin&hl=&cd=4&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=nIVPEAAAQBAJ&dq=inpublisher:penguin&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/The_Penguin_History_of_Europe.html?hl=&id=nIVPEAAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "NO_PAGES",
+                "embeddable": false,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=nIVPEAAAQBAJ&hl=&source=gbs_api",
+                "accessViewStatus": "NONE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "Comprehensive in its scope and brilliantly readable, this is a superb follow-up to the author&#39;s bestselling Penguin History of the World."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "XyMW6LqzVQQC",
+            "etag": "pB5i7KXD6bw",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/XyMW6LqzVQQC",
+            "volumeInfo": {
+                "title": "The Penguin Book of Classical Myths",
+                "authors": ["Jenny March"],
+                "publisher": "Penguin UK",
+                "publishedDate": "2009-10-27",
+                "description": "The greatest legends of all time, splendidly retold The myths of ancient Greece and Rome are the most dramatic and unforgettable tales of love, war, heroism, and betrayal ever told. Whether it?s Icarus flying too close to the sun, Prometheus stealing fire from the gods, or the tragedy of Oedipus, their characters have inspired art, literature, plays, and films. Now, renowned classics scholar Jenny March presents a dazzling reinterpretation of these time-honored myths. Laid out in eighteen clear chapters (like ?Dangerous Women? and ?Heroes?) and providing the origins, development, and interpretation of each myth, this is the essential guide to the stories that have shaped our world.",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780141020778"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0141020776"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 744,
+                "printType": "BOOK",
+                "categories": ["Fiction"],
+                "averageRating": 5,
+                "ratingsCount": 1,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "0.4.3.0.preview.2",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=XyMW6LqzVQQC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=XyMW6LqzVQQC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=XyMW6LqzVQQC&dq=inpublisher:penguin&hl=&cd=5&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=XyMW6LqzVQQC&dq=inpublisher:penguin&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/The_Penguin_Book_of_Classical_Myths.html?hl=&id=XyMW6LqzVQQC"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "NO_PAGES",
+                "embeddable": false,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true
+                },
+                "pdf": {
+                    "isAvailable": true
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=XyMW6LqzVQQC&hl=&source=gbs_api",
+                "accessViewStatus": "NONE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "All the stories of the Greek tragedies   Oedipus, Medea, Antigone   are there; all the events of the Trojan wars and of Odysseus and Aeneas  epic journeys; the founding of Athens and of Rome  These are the strangest tales of love, ..."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "VTIZAQAAIAAJ",
+            "etag": "eMIj6Asb8es",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/VTIZAQAAIAAJ",
+            "volumeInfo": {
+                "title": "The Penguin Dictionary of Philosophy",
+                "subtitle": "Second Edition",
+                "authors": ["Thomas Mautner"],
+                "publisher": "Penguin Books",
+                "publishedDate": "2005-12-27",
+                "description": "Featuring hundreds of entries, this authoritative, A-to-Z reference encompasses the full spectrum and history of Western philosophy, covering such topics as logic, metaphysics, ethics, and epistemology, as well as providing incisive profiles of the world's great philosophers, past and present, and their influence. Original.",
+                "industryIdentifiers": [
+                    {
+                        "type": "OTHER",
+                        "identifier": "UCSC:32106018677358"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": false
+                },
+                "pageCount": 663,
+                "printType": "BOOK",
+                "categories": ["Philosophy"],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "1.3.3.0.preview.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=VTIZAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=VTIZAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=VTIZAQAAIAAJ&dq=inpublisher:penguin&hl=&cd=6&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=VTIZAQAAIAAJ&dq=inpublisher:penguin&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/The_Penguin_Dictionary_of_Philosophy.html?hl=&id=VTIZAQAAIAAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "NO_PAGES",
+                "embeddable": false,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=VTIZAQAAIAAJ&hl=&source=gbs_api",
+                "accessViewStatus": "NONE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "Stimulating and authoritative, The Penguin Dictionary of Philosophy is the ideal reference work for anyone with an interest in the subject."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "RqI4myx1-nEC",
+            "etag": "y+f/UGjsbFw",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/RqI4myx1-nEC",
+            "volumeInfo": {
+                "title": "A Portrait of the Artist as a Young Man",
+                "authors": ["James Joyce"],
+                "publisher": "Penguin",
+                "publishedDate": "2003-03-25",
+                "description": "James Joyce's coming-of-age story, a tour de force of style and technique The first, shortest, and most approachable of James Joyce’s novels, A Portrait of the Artist as a Young Man portrays the Dublin upbringing of Stephen Dedalus, from his youthful days at Clongowes Wood College to his radical questioning of all convention. In doing so, it provides an oblique self-portrait of the young Joyce himself. At its center lie questions of origin and source, authority and authorship, and the relationship of an artist to his family, culture, and race. Exuberantly inventive in style, the novel subtly and beautifully orchestrates the patterns of quotation and repetition instrumental in its hero’s quest to create his own character, his own language, life, and art: “to forge in the smithy of my soul the uncreated conscience of my race.” This Penguin Classics edition is the definitive text, authorized by the Joyce estate and collated from all known proofs, manuscripts, and impressions to reflect the author’s original wishes. For more than seventy years, Penguin has been the leading publisher of classic literature in the English-speaking world. With more than 1,700 titles, Penguin Classics represents a global bookshelf of the best works throughout history and across genres and disciplines. Readers trust the series to provide authoritative texts enhanced by introductions and notes by distinguished scholars and contemporary authors, as well as up-to-date translations by award-winning translators.",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780142437346"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0142437344"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": false
+                },
+                "pageCount": 384,
+                "printType": "BOOK",
+                "categories": ["Fiction"],
+                "averageRating": 3,
+                "ratingsCount": 267,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "0.2.1.0.preview.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=RqI4myx1-nEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=RqI4myx1-nEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=RqI4myx1-nEC&printsec=frontcover&dq=inpublisher:penguin&hl=&cd=7&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=RqI4myx1-nEC&dq=inpublisher:penguin&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/A_Portrait_of_the_Artist_as_a_Young_Man.html?hl=&id=RqI4myx1-nEC"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=RqI4myx1-nEC&hl=&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "Exuberantly inventive in style, the novel subtly and beautifully orchestrates the patterns of quotation and repetition instrumental in its hero’s quest to create his own character, his own language, life, and art: “to forge in the ..."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "NPoAQRgkrOcC",
+            "etag": "hYpGsEnZ/u8",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/NPoAQRgkrOcC",
+            "volumeInfo": {
+                "title": "American Colonies",
+                "subtitle": "The Settling of North America (The Penguin History of the United States, Volume 1)",
+                "authors": ["Alan Taylor"],
+                "publisher": "Penguin",
+                "publishedDate": "2002-07-30",
+                "description": "A multicultural, multinational history of colonial America from the Pulitzer Prize-winning author of The Internal Enemy and American Revolutions In the first volume in the Penguin History of the United States, edited by Eric Foner, Alan Taylor challenges the traditional story of colonial history by examining the many cultures that helped make America, from the native inhabitants from milennia past, through the decades of Western colonization and conquest, and across the entire continent, all the way to the Pacific coast. Transcending the usual Anglocentric version of our colonial past, he recovers the importance of Native American tribes, African slaves, and the rival empires of France, Spain, the Netherlands, and even Russia in the colonization of North America. Moving beyond the Atlantic seaboard to examine the entire continent, American Colonies reveals a pivotal period in the global interaction of peoples, cultures, plants, animals, and microbes. In a vivid narrative, Taylor draws upon cutting-edge scholarship to create a timely picture of the colonial world characterized by an interplay of freedom and slavery, opportunity and loss. \"Formidable . . . provokes us to contemplate the ways in which residents of North America have dealt with diversity.\" -The New York Times Book Review",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0142002100"
+                    },
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780142002100"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": false
+                },
+                "pageCount": 548,
+                "printType": "BOOK",
+                "categories": ["History"],
+                "averageRating": 3.5,
+                "ratingsCount": 13,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "2.2.4.0.preview.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=NPoAQRgkrOcC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=NPoAQRgkrOcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=NPoAQRgkrOcC&printsec=frontcover&dq=inpublisher:penguin&hl=&cd=8&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=NPoAQRgkrOcC&dq=inpublisher:penguin&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/American_Colonies.html?hl=&id=NPoAQRgkrOcC"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=NPoAQRgkrOcC&hl=&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "A multicultural, multinational history of colonial America from the Pulitzer Prize-winning author of The Internal Enemy and American Revolutions In the first volume in the Penguin History of the United States, edited by Eric Foner, Alan ..."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "3JBPEAAAQBAJ",
+            "etag": "ukab3s7QnTU",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/3JBPEAAAQBAJ",
+            "volumeInfo": {
+                "title": "Fairy Tales",
+                "subtitle": "(Penguin Classics Deluxe Edition)",
+                "authors": ["Hans Christian Andersen"],
+                "publisher": "Penguin",
+                "publishedDate": "2006-03-28",
+                "description": "A Penguin Classics Deluxe Edition of Hans Christian Andersen's famous tales, from award-winning translator Tiina Nunnally Hans Christian Andersen was the profoundly imaginative writer and storyteller who revolutionized literature for children. He gave us the now standard versions of some traditional fairy tales—with an anarchic twist—but many of his most famous tales sprang directly from his imagination. The thirty stories here range from exuberant early works such as \"The Tinderbox\" and \"The Emperor's New Clothes\" through poignant masterpieces such as \"The Little Mermaid\" and \"The Ugly Duckling\" to more subversive later tales such as \"The Ice Maiden\" and \"The Wood Nymph.\" For more than seventy years, Penguin has been the leading publisher of classic literature in the English-speaking world. With more than 1,700 titles, Penguin Classics represents a global bookshelf of the best works throughout history and across genres and disciplines. Readers trust the series to provide authoritative texts enhanced by introductions and notes by distinguished scholars and contemporary authors, as well as up-to-date translations by award-winning translators.",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780143039525"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0143039520"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 0,
+                "printType": "BOOK",
+                "categories": ["Fiction"],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "preview-1.0.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=3JBPEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=3JBPEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=3JBPEAAAQBAJ&dq=inpublisher:penguin&hl=&cd=9&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=3JBPEAAAQBAJ&dq=inpublisher:penguin&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/Fairy_Tales.html?hl=&id=3JBPEAAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "NO_PAGES",
+                "embeddable": false,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=3JBPEAAAQBAJ&hl=&source=gbs_api",
+                "accessViewStatus": "NONE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "*Includes &quot;The Little Mermaid,&quot; soon to be a major motion picture from Disney starring Halle Bailey and directed by Rob Marshall* The famous tales of Hans Christian Andersen—some of the best-known fairy tales in the world—in a sparkling ..."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "36KMEAAAQBAJ",
+            "etag": "VH47miESAJE",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/36KMEAAAQBAJ",
+            "volumeInfo": {
+                "title": "The Greek Myths",
+                "subtitle": "(Penguin Classics Deluxe Edition)",
+                "authors": ["Robert Graves"],
+                "publisher": "National Geographic Books",
+                "publishedDate": "2012-04-24",
+                "description": "The gold standard in Greek mythology, in a dazzling Graphic Deluxe Edition featuring flaps, deckled edges, and specially commissioned cover art by Ross Macdonald and a new introduction by the multimillion-copy bestselling author of the Percy Jackson and the Olympians series From the creation of the world out of Chaos and the birth of the Olympians to the Trojan War and Odysseus's return, Robert Graves's superb retelling of the Greek myths has long been acclaimed as the definitive edition. Graves draws on sources scattered throughout ancient literature, using a novelist's skill to weave a crisp, coherent narrative of each myth and providing commentaries with cross-references, interpretations, and explanations based on solid scholarship. The result is a classic volume of many of the greatest stories ever told—stories of the gods, heroes, and extraordinary events that inspired Homer, the Greek tragedians, and so much of subsequent European literature. For more than seventy years, Penguin has been the leading publisher of classic literature in the English-speaking world. With more than 1,700 titles, Penguin Classics represents a global bookshelf of the best works throughout history and across genres and disciplines. Readers trust the series to provide authoritative texts enhanced by introductions and notes by distinguished scholars and contemporary authors, as well as up-to-date translations by award-winning translators.",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780143106715"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0143106716"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 0,
+                "printType": "BOOK",
+                "categories": ["Fiction"],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "preview-1.0.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=36KMEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=36KMEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=36KMEAAAQBAJ&dq=inpublisher:penguin&hl=&cd=10&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=36KMEAAAQBAJ&dq=inpublisher:penguin&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/The_Greek_Myths.html?hl=&id=36KMEAAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "NO_PAGES",
+                "embeddable": false,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=36KMEAAAQBAJ&hl=&source=gbs_api",
+                "accessViewStatus": "NONE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "The gold standard in Greek mythology, in a dazzling Graphic Deluxe Edition featuring flaps, deckled edges, and specially commissioned cover art by Ross Macdonald and a new introduction by the multimillion-copy bestselling author of the ..."
+            }
+        }
+    ]
+}
