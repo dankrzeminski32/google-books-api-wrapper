@@ -125,7 +125,7 @@ class BookSearchResultSet:
         """Class Constructor."""
         self._books = books or []
 
-    def get_best_match(self) -> Book:
+    def get_best_match(self) -> Book | None:
         """Returns the closest match to the search query
 
         :return: A Book object
