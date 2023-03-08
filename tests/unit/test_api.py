@@ -1,6 +1,6 @@
 from google_books_api_wrapper.api import GoogleBooksAPI
 from google_books_api_wrapper.constants import GOOGLE_BOOKS_API_URL
-from google_books_api_wrapper.models import Book, BookSearchResultSet
+from google_books_api_wrapper.models import Book, BookSearchResultSet, GoogleBooksSearchParams
 import responses
 
 
@@ -40,3 +40,7 @@ def test_good_search_request_returns_correct():
     assert books.total_results==2
     assert isinstance(books, BookSearchResultSet)
     assert books.get_best_match().title == "LOTR1"
+    
+def test_generate_good_search_params():
+    params = GoogleBooksSearchParams(title="test",isbn=20,publisher="penguin",author="dan",subject="fiction",search_term="wonder")
+    assert "q=wonder+intitle:test+isbn:20+inpublisher:penguin+inauthor:dan+subject:fiction&maxResults=40" == params.generate()
