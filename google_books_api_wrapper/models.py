@@ -59,7 +59,7 @@ class Book:
         ISBN_13: str = None,
         ISBN_10: str = None,
         page_count: int = None,
-        categories: list[str] = None,
+        subjects: list[str] = None,
         small_thumbnail: str = None,
         large_thumbnail: str = None,
     ):
@@ -73,7 +73,7 @@ class Book:
         self.ISBN_13 = ISBN_13
         self.ISBN_10 = ISBN_10
         self.page_count = page_count
-        self.categories = categories
+        self.subjects = subjects
         self.small_thumbnail = small_thumbnail
         self.large_thumbnail = large_thumbnail
 
@@ -105,7 +105,7 @@ class Book:
                 industry_ids, isbn_num=10
             ),
             page_count=volume_info.get("pageCount", None),
-            categories=volume_info.get("categories", None),
+            subjects=volume_info.get("categories", None),
             small_thumbnail=image_links.get("smallThumbnail", None),
             large_thumbnail=image_links.get("thumbnail", None),
         )

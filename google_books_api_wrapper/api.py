@@ -61,8 +61,13 @@ class GoogleBooksAPI:
     def get_books_by_publisher(self):
         pass
 
-    def get_books_by_subject(self):
-        pass
+    def get_books_by_subject(self, subject: str) -> BookSearchResultSet:
+        response = self._rest_adapter.get(endpoint="volumes",
+            ep_params=GoogleBooksSearchParams(
+                subject=subject
+            ).generate())
+        result_set = GoogleBooksApiParser.get_books_from_response(response)
+        return result_set
     
     def _get_book_by_isbn(self, isbn_num) -> Book:
         response = self._rest_adapter.get(
