@@ -32,6 +32,23 @@ class GoogleBooksAPI:
         publisher: str = None,
         subject: str = None,
     ) -> BookSearchResultSet:
+        """Search for a book with optional filters
+
+        :param search_term: General Search term relating to desired book, defaults to ""
+        :type search_term: str, optional
+        :param isbn: ISBN Identifier, defaults to None
+        :type isbn: int, optional
+        :param title: Book Title, defaults to None
+        :type title: str, optional
+        :param author: Book Author(s), defaults to None
+        :type author: str, optional
+        :param publisher: Book Publisher defaults to None
+        :type publisher: str, optional
+        :param subject: Book Subject, defaults to None
+        :type subject: str, optional
+        :return: A BookSearchResultSet objects
+        :rtype: BookSearchResultSet
+        """
         response = self._rest_adapter.get(
             endpoint="volumes",
             ep_params=GoogleBooksSearchParams(
@@ -46,10 +63,25 @@ class GoogleBooksAPI:
         result_set = GoogleBooksApiParser.get_books_from_response(response)
         return result_set
 
-    def get_book_by_isbn13(self, isbn13: int) -> int:
+    def get_book_by_isbn13(self, isbn13: int) -> Book:
+        """Retrieve a book by ISBN13 Identifier.
+
+
+        :param isbn13: ISBN13 Book Identiier
+        :type isbn13: int
+        :return: A Book Object
+        :rtype: Book
+        """
         return self._get_book_by_isbn(isbn13)
 
-    def get_book_by_isbn10(self, isbn10: int) -> int:
+    def get_book_by_isbn10(self, isbn10: int) -> Book:
+        """Retrieves a book by ISBN10 Identifier
+
+        :param isbn10: ISBN10 Book Identifier
+        :type isbn10: int
+        :return: A Book object
+        :rtype: Book
+        """
         return self._get_book_by_isbn(isbn10)
 
     def get_book_by_title(self):
@@ -62,6 +94,13 @@ class GoogleBooksAPI:
         pass
 
     def get_books_by_subject(self, subject: str) -> BookSearchResultSet:
+        """Retrieve books that match a subject or genre
+
+        :param subject: Subject or Genre of desired Books
+        :type subject: str
+        :return: A result set of Book items
+        :rtype: BookSearchResultSet
+        """
         response = self._rest_adapter.get(endpoint="volumes",
             ep_params=GoogleBooksSearchParams(
                 subject=subject
@@ -70,6 +109,7 @@ class GoogleBooksAPI:
         return result_set
     
     def _get_book_by_isbn(self, isbn_num) -> Book:
+        """Base implementation of getting a book by isbn, used internally"""
         response = self._rest_adapter.get(
         endpoint="volumes",
         ep_params=GoogleBooksSearchParams(isbn=isbn_num).generate(),
