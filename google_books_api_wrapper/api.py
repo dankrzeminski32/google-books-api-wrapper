@@ -26,7 +26,7 @@ class GoogleBooksAPI:
     def search_book(
         self,
         search_term: str = "",
-        isbn: int = None,
+        isbn: str = None,
         title: str = None,
         author: str = None,
         publisher: str = None,
@@ -63,7 +63,7 @@ class GoogleBooksAPI:
         result_set = BookSearchResultSet.from_google_books_api_response(response.data)
         return result_set
 
-    def get_book_by_isbn13(self, isbn13: int) -> Book:
+    def get_book_by_isbn13(self, isbn13: str) -> Book:
         """Retrieve a book by ISBN13 Identifier.
 
 
@@ -74,7 +74,7 @@ class GoogleBooksAPI:
         """
         return self._get_book_by_isbn(isbn13)
 
-    def get_book_by_isbn10(self, isbn10: int) -> Book:
+    def get_book_by_isbn10(self, isbn10: str) -> Book:
         """Retrieves a book by ISBN10 Identifier
 
         :param isbn10: ISBN10 Book Identifier
@@ -108,11 +108,11 @@ class GoogleBooksAPI:
         result_set = BookSearchResultSet.from_google_books_api_response(response.data)
         return result_set
     
-    def _get_book_by_isbn(self, isbn_num) -> Book:
+    def _get_book_by_isbn(self, isbn: str) -> Book:
         """Base implementation of getting a book by isbn, used internally"""
         response = self._rest_adapter.get(
         endpoint="volumes",
-        ep_params=GoogleBooksSearchParams(isbn=isbn_num).generate(),
+        ep_params=GoogleBooksSearchParams(isbn=isbn).generate(),
         )
         result_set = BookSearchResultSet.from_google_books_api_response(response.data)
         return result_set.get_best_match()

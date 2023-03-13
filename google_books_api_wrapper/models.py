@@ -78,7 +78,7 @@ class Book:
         self.large_thumbnail = large_thumbnail
 
     @classmethod
-    def from_api_response_item(cls, api_response_item: dict) -> Book:
+    def from_google_books_api_response_book_item(cls, api_response_item: dict) -> Book:
         """Generates a Book object from Google Books Web API response
 
         :param api_response_item: Response item from hitting the Google Books API Endpoint
@@ -136,7 +136,7 @@ class BookSearchResultSet:
             google_books_response_data["items"] if "items" in google_books_response_data else []
         )
         book_results = [
-            Book.from_api_response_item(book_result)
+            Book.from_google_books_api_response_book_item(book_result)
             for book_result in book_results_from_web_api
         ]
         return cls(books=book_results)
@@ -176,7 +176,7 @@ class GoogleBooksSearchParams:
         self,
         *,
         title: str = None,
-        isbn: int = None,
+        isbn: str = None,
         publisher: str = None,
         author: str = None,
         subject: str = None,

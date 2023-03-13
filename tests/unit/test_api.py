@@ -64,8 +64,8 @@ def test_generate_good_search_params():
     params = GoogleBooksSearchParams(title="test",isbn=20,publisher="penguin",author="dan",subject="fiction",search_term="wonder")
     assert "q=wonder+intitle:test+isbn:20+inpublisher:penguin+inauthor:dan+subject:fiction&maxResults=40" == params.generate()
     
-def test_parser_get_books_good_request(test_book_response_data):
-    resp = HttpResult(200, test_book_response_data)
+def test_parser_get_books_good_request(google_books_multiple_books_response_data):
+    resp = HttpResult(200, google_books_multiple_books_response_data)
     books = BookSearchResultSet.from_google_books_api_response(resp.data)
     assert books.total_results == 10
     
