@@ -78,7 +78,7 @@ class Book:
         self.large_thumbnail = large_thumbnail
 
     @classmethod
-    def from_api_response_item(cls, api_response_item: dict) -> Book:
+    def from_google_books_api_response_book_item(cls, api_response_item: dict) -> Book:
         """Generates a Book object from Google Books Web API response
 
         :param api_response_item: Response item from hitting the Google Books API Endpoint
@@ -86,11 +86,16 @@ class Book:
         :return: A Book Object
         :rtype: Book
         """
-        from .api import GoogleBooksApiParser
-
         volume_info = api_response_item.get("volumeInfo", {})
         industry_ids = volume_info.get("industryIdentifiers", [])
         image_links = volume_info.get("imageLinks", {})
+        def get_isbn_from_id_list(
+            industry_ids: list[dict[str, str]], *, isbn_num: int
+        ) -> str:
+            for id in industry_ids:
+                if id["type"] == "ISBN_" + str(isbn_num):
+                    return id["identifier"]
+            return None
         return cls(
             title=volume_info.get("title", None),
             authors=volume_info.get("authors", None),
@@ -98,10 +103,10 @@ class Book:
             publisher=volume_info.get("publisher", None),
             published_date=volume_info.get("publishedDate", None),
             description=volume_info.get("description", None),
-            ISBN_13=GoogleBooksApiParser.get_isbn_from_id_list(
+            ISBN_13=get_isbn_from_id_list(
                 industry_ids, isbn_num=13
             ),
-            ISBN_10=GoogleBooksApiParser.get_isbn_from_id_list(
+            ISBN_10=get_isbn_from_id_list(
                 industry_ids, isbn_num=10
             ),
             page_count=volume_info.get("pageCount", None),
@@ -124,6 +129,19 @@ class BookSearchResultSet:
     def __init__(self, books: list[Book] = None):
         """Class Constructor."""
         self._books = books or []
+    
+    @classmethod
+    def from_google_books_api_response(cls, google_books_response_data: dict) -> BookSearchResultSet:
+        book_results_from_web_api = (
+            google_books_response_data["items"] if "items" in google_books_response_data else []
+        )
+        book_results = [
+            Book.from_google_books_api_response_book_item(book_result)
+            for book_result in book_results_from_web_api
+        ]
+        return cls(books=book_results)
+
+        
 
     def get_best_match(self) -> Book | None:
         """Returns the closest match to the search query
@@ -158,7 +176,7 @@ class GoogleBooksSearchParams:
         self,
         *,
         title: str = None,
-        isbn: int = None,
+        isbn: str = None,
         publisher: str = None,
         author: str = None,
         subject: str = None,

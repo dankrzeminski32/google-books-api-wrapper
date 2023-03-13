@@ -1,7 +1,7 @@
 import logging
 from .rest_adapter import RestAdapter
 from .constants import GOOGLE_BOOKS_API_URL
-from .models import Book, HttpResult, BookSearchResultSet, GoogleBooksSearchParams
+from .models import Book, BookSearchResultSet, GoogleBooksSearchParams
 
 class GoogleBooksAPI:
     """Wrapper around the Google Books REST API
@@ -26,7 +26,7 @@ class GoogleBooksAPI:
     def search_book(
         self,
         search_term: str = "",
-        isbn: int = None,
+        isbn: str = None,
         title: str = None,
         author: str = None,
         publisher: str = None,
@@ -60,10 +60,10 @@ class GoogleBooksAPI:
                 subject=subject,
             ).generate(),
         )
-        result_set = GoogleBooksApiParser.get_books_from_response(response)
+        result_set = BookSearchResultSet.from_google_books_api_response(response.data)
         return result_set
 
-    def get_book_by_isbn13(self, isbn13: int) -> Book:
+    def get_book_by_isbn13(self, isbn13: str) -> Book:
         """Retrieve a book by ISBN13 Identifier.
 
 
@@ -74,7 +74,7 @@ class GoogleBooksAPI:
         """
         return self._get_book_by_isbn(isbn13)
 
-    def get_book_by_isbn10(self, isbn10: int) -> Book:
+    def get_book_by_isbn10(self, isbn10: str) -> Book:
         """Retrieves a book by ISBN10 Identifier
 
         :param isbn10: ISBN10 Book Identifier
@@ -105,37 +105,14 @@ class GoogleBooksAPI:
             ep_params=GoogleBooksSearchParams(
                 subject=subject
             ).generate())
-        result_set = GoogleBooksApiParser.get_books_from_response(response)
+        result_set = BookSearchResultSet.from_google_books_api_response(response.data)
         return result_set
     
-    def _get_book_by_isbn(self, isbn_num) -> Book:
+    def _get_book_by_isbn(self, isbn: str) -> Book:
         """Base implementation of getting a book by isbn, used internally"""
         response = self._rest_adapter.get(
         endpoint="volumes",
-        ep_params=GoogleBooksSearchParams(isbn=isbn_num).generate(),
+        ep_params=GoogleBooksSearchParams(isbn=isbn).generate(),
         )
-        result_set = GoogleBooksApiParser.get_books_from_response(response)
+        result_set = BookSearchResultSet.from_google_books_api_response(response.data)
         return result_set.get_best_match()
-
-
-class GoogleBooksApiParser:
-    @staticmethod
-    def get_books_from_response(response: HttpResult) -> BookSearchResultSet:
-        book_results_from_web_api = (
-            response.data["items"] if "items" in response.data else []
-        )
-        book_results = [
-            Book.from_api_response_item(book_result)
-            for book_result in book_results_from_web_api
-        ]
-        return BookSearchResultSet(books=book_results)
-    
-
-    @staticmethod
-    def get_isbn_from_id_list(
-        industry_ids: list[dict[str, str]], *, isbn_num: int
-    ) -> str:
-        for id in industry_ids:
-            if id["type"] == "ISBN_" + str(isbn_num):
-                return id["identifier"]
-        return None
