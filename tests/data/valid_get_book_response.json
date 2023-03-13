@@ -18,10 +18,6 @@
                     {
                         "type": "ISBN_13",
                         "identifier": "9781846144431"
-                    },
-                    {
-                        "type": "ISBN_10",
-                        "identifier": "1846144434"
                     }
                 ],
                 "readingModes": {

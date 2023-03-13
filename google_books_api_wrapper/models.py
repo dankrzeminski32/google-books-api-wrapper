@@ -3,7 +3,6 @@ from datetime import date
 from .constants import GoogleBookAPISearchFilters
 import urllib.parse
 
-
 class HttpResult:
     """Low-level custom http result object
 
@@ -59,7 +58,7 @@ class Book:
         ISBN_13: str = None,
         ISBN_10: str = None,
         page_count: int = None,
-        categories: list[str] = None,
+        subjects: list[str] = None,
         small_thumbnail: str = None,
         large_thumbnail: str = None,
     ):
@@ -73,12 +72,12 @@ class Book:
         self.ISBN_13 = ISBN_13
         self.ISBN_10 = ISBN_10
         self.page_count = page_count
-        self.categories = categories
+        self.subjects = subjects
         self.small_thumbnail = small_thumbnail
         self.large_thumbnail = large_thumbnail
 
     @classmethod
-    def from_api_response_item(cls, api_response_item: dict) -> Book:
+    def from_google_books_api_response_book_item(cls, api_response_item: dict) -> Book:
         """Generates a Book object from Google Books Web API response
 
         :param api_response_item: Response item from hitting the Google Books API Endpoint
@@ -86,11 +85,16 @@ class Book:
         :return: A Book Object
         :rtype: Book
         """
-        from .api import GoogleBooksApiParser
-
         volume_info = api_response_item.get("volumeInfo", {})
         industry_ids = volume_info.get("industryIdentifiers", [])
         image_links = volume_info.get("imageLinks", {})
+        def get_isbn_from_id_list(
+            industry_ids: list[dict[str, str]], *, isbn_num: int
+        ) -> str:
+            for id in industry_ids:
+                if id["type"] == "ISBN_" + str(isbn_num):
+                    return id["identifier"]
+            return None
         return cls(
             title=volume_info.get("title", None),
             authors=volume_info.get("authors", None),
@@ -98,19 +102,22 @@ class Book:
             publisher=volume_info.get("publisher", None),
             published_date=volume_info.get("publishedDate", None),
             description=volume_info.get("description", None),
-            ISBN_13=GoogleBooksApiParser.get_isbn_from_id_list(
+            ISBN_13=get_isbn_from_id_list(
                 industry_ids, isbn_num=13
             ),
-            ISBN_10=GoogleBooksApiParser.get_isbn_from_id_list(
+            ISBN_10=get_isbn_from_id_list(
                 industry_ids, isbn_num=10
             ),
             page_count=volume_info.get("pageCount", None),
-            categories=volume_info.get("categories", None),
+            subjects=volume_info.get("categories", None),
             small_thumbnail=image_links.get("smallThumbnail", None),
             large_thumbnail=image_links.get("thumbnail", None),
         )
 
     def __repr__(self):
+        return f"Book(title={self.title}, authors={self.authors})"
+
+    def __str__(self):
         return f"Book(title={self.title}, authors={self.authors})"
 
 
@@ -124,6 +131,31 @@ class BookSearchResultSet:
     def __init__(self, books: list[Book] = None):
         """Class Constructor."""
         self._books = books or []
+        self._idx = 0
+        
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        try:
+            item = self._books[self._idx]
+        except IndexError:
+            raise StopIteration()
+        self._idx += 1
+        return item
+    
+    @classmethod
+    def from_google_books_api_response(cls, google_books_response_data: dict) -> BookSearchResultSet:
+        book_results_from_web_api = (
+            google_books_response_data["items"] if "items" in google_books_response_data else []
+        )
+        book_results = [
+            Book.from_google_books_api_response_book_item(book_result)
+            for book_result in book_results_from_web_api
+        ]
+        return cls(books=book_results)
+
+        
 
     def get_best_match(self) -> Book | None:
         """Returns the closest match to the search query
@@ -158,7 +190,7 @@ class GoogleBooksSearchParams:
         self,
         *,
         title: str = None,
-        isbn: int = None,
+        isbn: str = None,
         publisher: str = None,
         author: str = None,
         subject: str = None,
