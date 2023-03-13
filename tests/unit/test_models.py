@@ -1,4 +1,6 @@
 from google_books_api_wrapper.models import Book, HttpResult, BookSearchResultSet
+from collections.abc import Iterable
+import pytest
 
 
 def test_book_model():
@@ -33,3 +35,9 @@ def test_get_book_search_result_set_returns_no_data_from_empty_response(google_b
     assert result_set.total_results == 0
     assert result_set.get_all_results() == []
     assert result_set.get_best_match() == None
+
+def test_book_search_result_set_is_iterable(google_books_multiple_books_response_data):
+    fake_http_resp = HttpResult(200,google_books_multiple_books_response_data)
+    result_set = BookSearchResultSet.from_google_books_api_response(fake_http_resp.data)
+    assert isinstance(result_set, Iterable) == True
+        
