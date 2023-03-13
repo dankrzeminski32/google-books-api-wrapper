@@ -79,3 +79,19 @@ def test_parser_get_books_empty_request():
 
     
 
+@responses.activate
+def test_get_book_by_subject_produces_correct_request():
+    responses.add(
+        responses.GET,
+        "https://" + GOOGLE_BOOKS_API_URL + "/v1/volumes",
+        json={
+    "kind": "books#volumes",
+    "totalItems": 200,
+    "items": [
+        {"volumeInfo": {"title": "harry potter"}}]
+        },
+        status=200,
+    )
+    client = GoogleBooksAPI()
+    book = client.get_books_by_subject("Fiction")
+    assert responses.calls[0].request.params == {'maxResults': '40', 'q': ' subject:Fiction'}
