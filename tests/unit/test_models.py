@@ -1,4 +1,4 @@
-from google_books_api_wrapper.models import Book, HttpResult, GoogleBooksSearchParams
+from google_books_api_wrapper.models import Book, HttpResult
 
 
 def test_book_model():

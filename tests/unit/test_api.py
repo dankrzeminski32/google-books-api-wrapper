@@ -1,4 +1,4 @@
-from google_books_api_wrapper.api import GoogleBooksAPI, GoogleBooksApiParser
+from google_books_api_wrapper.api import GoogleBooksAPI 
 from google_books_api_wrapper.constants import GOOGLE_BOOKS_API_URL
 from google_books_api_wrapper.models import Book, BookSearchResultSet, GoogleBooksSearchParams, HttpResult
 import responses
@@ -66,13 +66,13 @@ def test_generate_good_search_params():
     
 def test_parser_get_books_good_request(test_book_response_data):
     resp = HttpResult(200, test_book_response_data)
-    books = GoogleBooksApiParser.get_books_from_response(resp)
+    books = BookSearchResultSet.from_google_books_api_response(resp.data)
     assert books.total_results == 10
     
 
 def test_parser_get_books_empty_request():
     resp = HttpResult(200, {"totalItems": 0})
-    books = GoogleBooksApiParser.get_books_from_response(resp)
+    books = BookSearchResultSet.from_google_books_api_response(resp.data)
     assert books.total_results == 0
     assert books.get_all_results() == []
     assert books.get_best_match() == None
