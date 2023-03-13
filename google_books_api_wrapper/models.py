@@ -3,7 +3,6 @@ from datetime import date
 from .constants import GoogleBookAPISearchFilters
 import urllib.parse
 
-
 class HttpResult:
     """Low-level custom http result object
 
@@ -118,6 +117,9 @@ class Book:
     def __repr__(self):
         return f"Book(title={self.title}, authors={self.authors})"
 
+    def __str__(self):
+        return f"Book(title={self.title}, authors={self.authors})"
+
 
 class BookSearchResultSet:
     """Represents search results coming from the Google Books Web API
@@ -129,6 +131,18 @@ class BookSearchResultSet:
     def __init__(self, books: list[Book] = None):
         """Class Constructor."""
         self._books = books or []
+        self._idx = 0
+        
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        try:
+            item = self._books[self._idx]
+        except IndexError:
+            raise StopIteration()
+        self._idx += 1
+        return item
     
     @classmethod
     def from_google_books_api_response(cls, google_books_response_data: dict) -> BookSearchResultSet:

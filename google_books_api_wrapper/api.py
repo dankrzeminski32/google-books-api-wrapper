@@ -86,12 +86,24 @@ class GoogleBooksAPI:
 
     def get_book_by_title(self):
         pass
-
+    
     def get_books_by_author(self):
         pass
 
-    def get_books_by_publisher(self):
-        pass
+    def get_books_by_publisher(self, publisher: str) -> BookSearchResultSet:
+        """Retrieves books that match a publisher string
+
+        :param publisher: book publisher
+        :type publisher: str
+        :return: A BookSearchResultSet Object
+        :rtype: BookSearchResultSet
+        """
+        response = self._rest_adapter.get(
+        endpoint="volumes",
+        ep_params=GoogleBooksSearchParams(publisher=publisher).generate(),
+        )
+        result_set = BookSearchResultSet.from_google_books_api_response(response.data)
+        return result_set
 
     def get_books_by_subject(self, subject: str) -> BookSearchResultSet:
         """Retrieve books that match a subject or genre
