@@ -164,6 +164,21 @@ class GoogleBooksSearchParams:
         subject: str = None,
         search_term: str = "",
     ):
+        """Represents search parameters to be used on the API
+
+        :param title: Book Title, defaults to None
+        :type title: str, optional
+        :param isbn: ISBN Number, defaults to None
+        :type isbn: int, optional
+        :param publisher: Book Publisher, defaults to None
+        :type publisher: str, optional
+        :param author: Book Author, defaults to None
+        :type author: str, optional
+        :param subject: Subject/Genre of Book, defaults to None
+        :type subject: str, optional
+        :param search_term: Book generalizedsearch term, defaults to ""
+        :type search_term: str, optional
+        """
         self.search_term = search_term
         self.title = title
         self.isbn = isbn
@@ -171,14 +186,19 @@ class GoogleBooksSearchParams:
         self.author = author
         self.subject = subject
 
-    def generate(self):
+    def generate(self) -> str:
+        """Generates URL Query String based on item properties
+
+        :return: Query String
+        :rtype: str
+        """
         filters = self._get_used_filters()
         search_term_with_filters: str = None
         if len(filters) > 0:
             search_term_with_filters = self._get_search_term_with_filters()
         return urllib.parse.urlencode({"q": search_term_with_filters or self.search_term, "maxResults": 40}, safe=":+")
 
-    def _get_used_filters(self):
+    def _get_used_filters(self) -> list[str]:
         used_properties = []
         for property in vars(self):
             if property == "search_term":
