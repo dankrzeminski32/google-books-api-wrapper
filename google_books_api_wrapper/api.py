@@ -1,5 +1,5 @@
 import logging
-from .rest_adapter import RestAdapter
+from ._rest_adapter import RestAdapter
 from .constants import GOOGLE_BOOKS_API_URL
 from .models import Book, BookSearchResultSet, GoogleBooksSearchParams
 
