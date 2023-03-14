@@ -29,17 +29,12 @@ BookSearchResultSet Class
 .. autoclass:: google_books_api_wrapper.models.BookSearchResultSet
     :members:
 
-GoogleBooksApiParser Class
+GoogleBooksSearchParams Class
 ====================================================
-.. autoclass:: google_books_api_wrapper.api.GoogleBooksApiParser
+.. autoclass:: google_books_api_wrapper.models.GoogleBooksSearchParams
     :members:
 
-HttpResult Class
+Exceptions
 ====================================================
-.. autoclass:: google_books_api_wrapper.models.HttpResult
-    :members:
-
-RestAdapter Class
-====================================================
-.. autoclass:: google_books_api_wrapper.rest_adapter.RestAdapter
+.. automodule:: google_books_api_wrapper.exceptions
     :members:

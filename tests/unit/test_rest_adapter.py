@@ -1,6 +1,6 @@
 import requests
 import responses
-from google_books_api_wrapper.rest_adapter import RestAdapter
+from google_books_api_wrapper._rest_adapter import RestAdapter
 from google_books_api_wrapper.constants import GOOGLE_BOOKS_API_URL
 from google_books_api_wrapper.exceptions import GoogleBooksAPIException
 import pytest

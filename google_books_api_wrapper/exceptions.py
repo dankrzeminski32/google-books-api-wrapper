@@ -1,2 +1,2 @@
 class GoogleBooksAPIException(Exception):
-    pass
+    """Raised when there is an error establishing connection with Google API"""
