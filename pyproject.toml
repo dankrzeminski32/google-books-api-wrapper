@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "google-books-api-wrapper"
-version = "1.0.0"
+version = "1.0.3"
 description = "A simple and easy to use wrapper around the Google Books Web API."
 authors = ["dankrzeminski32 <dankrzeminski32@gmail.com>"]
 license = "MIT"
-homepage = "https://dankrzeminski32.github.io/google-books-api-wrapper/"
+homepage = "https://github.com/dankrzeminski32/google-books-api-wrapper"
+documentation = "https://dankrzeminski32.github.io/google-books-api-wrapper/"
 readme = "README.md"
 packages = [{include = "google_books_api_wrapper"}]
-
 [tool.pytest.ini_options]
 pythonpath = [
   "."

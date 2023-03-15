@@ -12,3 +12,8 @@ build-docs:
 	cd docs; \
 	poetry run make clean; \
 	poetry run sphinx-build -b html source/ build/html;
+
+publish:
+	rm dist -r; \
+	poetry build; \
+	twine upload dist/*
