@@ -51,6 +51,7 @@ class Book:
         self,
         title: str,
         authors: list[str],
+        id: str = None,
         subtitle: str = None,
         publisher: str = None,
         published_date: date = None,
@@ -63,6 +64,7 @@ class Book:
         large_thumbnail: str = None,
     ):
         """Class Constructor"""
+        self.id = id
         self.title = title
         self.authors = authors
         self.subtitle = subtitle
@@ -85,6 +87,7 @@ class Book:
         :return: A Book Object
         :rtype: Book
         """
+        volume_id = api_response_item.get("id", None)
         volume_info = api_response_item.get("volumeInfo", {})
         industry_ids = volume_info.get("industryIdentifiers", [])
         image_links = volume_info.get("imageLinks", {})
@@ -96,6 +99,7 @@ class Book:
                     return id["identifier"]
             return None
         return cls(
+            id=volume_id,
             title=volume_info.get("title", None),
             authors=volume_info.get("authors", None),
             subtitle=volume_info.get("subtitle", None),
