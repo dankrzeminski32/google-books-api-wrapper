@@ -100,7 +100,7 @@ jobs:
 
     environment:
       name: testpypi
-      url: https://test.pypi.org/p/google-books-api-wrapper
+      url: https://test.pypi.org/p/google-books-api-wrap
 
     permissions:
       id-token: write  # IMPORTANT: mandatory for trusted publishing
