@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Google Books API Wrapper’s documentation! &mdash; Google Books API Wrapper 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Google Books API Wrapper
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to Google Books API Wrapper’s documentation!</a></li>
+<li><a class="reference internal" href="#googlebooksapi-class">GoogleBooksAPI Class</a><ul>
+<li><a class="reference internal" href="#google_books_api_wrapper.api.GoogleBooksAPI"><code class="docutils literal notranslate"><span class="pre">GoogleBooksAPI</span></code></a><ul>
+<li><a class="reference internal" href="#google_books_api_wrapper.api.GoogleBooksAPI.get_book_by_isbn10"><code class="docutils literal notranslate"><span class="pre">GoogleBooksAPI.get_book_by_isbn10()</span></code></a></li>
+<li><a class="reference internal" href="#google_books_api_wrapper.api.GoogleBooksAPI.get_book_by_isbn13"><code class="docutils literal notranslate"><span class="pre">GoogleBooksAPI.get_book_by_isbn13()</span></code></a></li>
+<li><a class="reference internal" href="#google_books_api_wrapper.api.GoogleBooksAPI.get_book_by_title"><code class="docutils literal notranslate"><span class="pre">GoogleBooksAPI.get_book_by_title()</span></code></a></li>
+<li><a class="reference internal" href="#google_books_api_wrapper.api.GoogleBooksAPI.get_books_by_author"><code class="docutils literal notranslate"><span class="pre">GoogleBooksAPI.get_books_by_author()</span></code></a></li>
+<li><a class="reference internal" href="#google_books_api_wrapper.api.GoogleBooksAPI.get_books_by_publisher"><code class="docutils literal notranslate"><span class="pre">GoogleBooksAPI.get_books_by_publisher()</span></code></a></li>
+<li><a class="reference internal" href="#google_books_api_wrapper.api.GoogleBooksAPI.get_books_by_subject"><code class="docutils literal notranslate"><span class="pre">GoogleBooksAPI.get_books_by_subject()</span></code></a></li>
+<li><a class="reference internal" href="#google_books_api_wrapper.api.GoogleBooksAPI.search_book"><code class="docutils literal notranslate"><span class="pre">GoogleBooksAPI.search_book()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#book-class">Book Class</a><ul>
+<li><a class="reference internal" href="#google_books_api_wrapper.models.Book"><code class="docutils literal notranslate"><span class="pre">Book</span></code></a><ul>
+<li><a class="reference internal" href="#google_books_api_wrapper.models.Book.from_google_books_api_response_book_item"><code class="docutils literal notranslate"><span class="pre">Book.from_google_books_api_response_book_item()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#booksearchresultset-class">BookSearchResultSet Class</a><ul>
+<li><a class="reference internal" href="#google_books_api_wrapper.models.BookSearchResultSet"><code class="docutils literal notranslate"><span class="pre">BookSearchResultSet</span></code></a><ul>
+<li><a class="reference internal" href="#google_books_api_wrapper.models.BookSearchResultSet.get_all_results"><code class="docutils literal notranslate"><span class="pre">BookSearchResultSet.get_all_results()</span></code></a></li>
+<li><a class="reference internal" href="#google_books_api_wrapper.models.BookSearchResultSet.get_best_match"><code class="docutils literal notranslate"><span class="pre">BookSearchResultSet.get_best_match()</span></code></a></li>
+<li><a class="reference internal" href="#google_books_api_wrapper.models.BookSearchResultSet.total_results"><code class="docutils literal notranslate"><span class="pre">BookSearchResultSet.total_results</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#googlebookssearchparams-class">GoogleBooksSearchParams Class</a><ul>
+<li><a class="reference internal" href="#google_books_api_wrapper.models.GoogleBooksSearchParams"><code class="docutils literal notranslate"><span class="pre">GoogleBooksSearchParams</span></code></a><ul>
+<li><a class="reference internal" href="#google_books_api_wrapper.models.GoogleBooksSearchParams.generate"><code class="docutils literal notranslate"><span class="pre">GoogleBooksSearchParams.generate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-google_books_api_wrapper.exceptions">Exceptions</a><ul>
+<li><a class="reference internal" href="#google_books_api_wrapper.exceptions.GoogleBooksAPIException"><code class="docutils literal notranslate"><span class="pre">GoogleBooksAPIException</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Google Books API Wrapper</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to Google Books API Wrapper’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-google-books-api-wrapper-s-documentation">
+<h1>Welcome to Google Books API Wrapper’s documentation!<a class="headerlink" href="#welcome-to-google-books-api-wrapper-s-documentation" title="Link to this heading"></a></h1>
+<p><strong>google-books-api-wrapper</strong> is a python web api wrapper for the Google Books api. I developed this mostly for using the unauthenticated requests for searching books and getting their relevant details.
+This includes the authors, official title and subtitles, Publication date, Publisher, Genre, etc.utfu</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="googlebooksapi-class">
+<h1>GoogleBooksAPI Class<a class="headerlink" href="#googlebooksapi-class" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="google_books_api_wrapper.api.GoogleBooksAPI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">google_books_api_wrapper.api.</span></span><span class="sig-name descname"><span class="pre">GoogleBooksAPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hostname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'www.googleapis.com/books'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ver</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'v1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#google_books_api_wrapper.api.GoogleBooksAPI" title="Link to this definition"></a></dt>
+<dd><p>Wrapper around the Google Books REST API</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hostname</strong> (<em>str</em><em>, </em><em>optional</em>) – api hostname, defaults to “www.googleapis.com/books”</p></li>
+<li><p><strong>ver</strong> (<em>str</em><em>, </em><em>optional</em>) – api version number, defaults to “v1”</p></li>
+<li><p><strong>logger</strong> (<em>logging.Logger</em><em>, </em><em>optional</em>) – package logger, defaults to None</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="google_books_api_wrapper.api.GoogleBooksAPI.get_book_by_isbn10">
+<span class="sig-name descname"><span class="pre">get_book_by_isbn10</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isbn10</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#google_books_api_wrapper.models.Book" title="google_books_api_wrapper.models.Book"><span class="pre">Book</span></a></span></span><a class="headerlink" href="#google_books_api_wrapper.api.GoogleBooksAPI.get_book_by_isbn10" title="Link to this definition"></a></dt>
+<dd><p>Retrieves a book by ISBN10 Identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>isbn10</strong> (<em>int</em>) – ISBN10 Book Identifier</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Book object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#google_books_api_wrapper.models.Book" title="google_books_api_wrapper.models.Book">Book</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="google_books_api_wrapper.api.GoogleBooksAPI.get_book_by_isbn13">
+<span class="sig-name descname"><span class="pre">get_book_by_isbn13</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isbn13</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#google_books_api_wrapper.models.Book" title="google_books_api_wrapper.models.Book"><span class="pre">Book</span></a></span></span><a class="headerlink" href="#google_books_api_wrapper.api.GoogleBooksAPI.get_book_by_isbn13" title="Link to this definition"></a></dt>
+<dd><p>Retrieve a book by ISBN13 Identifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>isbn13</strong> (<em>int</em>) – ISBN13 Book Identiier</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Book Object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#google_books_api_wrapper.models.Book" title="google_books_api_wrapper.models.Book">Book</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="google_books_api_wrapper.api.GoogleBooksAPI.get_book_by_title">
+<span class="sig-name descname"><span class="pre">get_book_by_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#google_books_api_wrapper.models.Book" title="google_books_api_wrapper.models.Book"><span class="pre">Book</span></a></span></span><a class="headerlink" href="#google_books_api_wrapper.api.GoogleBooksAPI.get_book_by_title" title="Link to this definition"></a></dt>
+<dd><p>Retrieves a book based on it’s title</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>title</strong> (<em>str</em>) – Book title</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Book object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#google_books_api_wrapper.models.Book" title="google_books_api_wrapper.models.Book">Book</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="google_books_api_wrapper.api.GoogleBooksAPI.get_books_by_author">
+<span class="sig-name descname"><span class="pre">get_books_by_author</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">author</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#google_books_api_wrapper.models.BookSearchResultSet" title="google_books_api_wrapper.models.BookSearchResultSet"><span class="pre">BookSearchResultSet</span></a></span></span><a class="headerlink" href="#google_books_api_wrapper.api.GoogleBooksAPI.get_books_by_author" title="Link to this definition"></a></dt>
+<dd><p>Searches for books based on a particular author</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>author</strong> (<em>str</em>) – Book Author</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A BookSearchResultSet Object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#google_books_api_wrapper.models.BookSearchResultSet" title="google_books_api_wrapper.models.BookSearchResultSet">BookSearchResultSet</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="google_books_api_wrapper.api.GoogleBooksAPI.get_books_by_publisher">
+<span class="sig-name descname"><span class="pre">get_books_by_publisher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">publisher</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#google_books_api_wrapper.models.BookSearchResultSet" title="google_books_api_wrapper.models.BookSearchResultSet"><span class="pre">BookSearchResultSet</span></a></span></span><a class="headerlink" href="#google_books_api_wrapper.api.GoogleBooksAPI.get_books_by_publisher" title="Link to this definition"></a></dt>
+<dd><p>Retrieves books that match a publisher string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>publisher</strong> (<em>str</em>) – book publisher</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A BookSearchResultSet Object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#google_books_api_wrapper.models.BookSearchResultSet" title="google_books_api_wrapper.models.BookSearchResultSet">BookSearchResultSet</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="google_books_api_wrapper.api.GoogleBooksAPI.get_books_by_subject">
+<span class="sig-name descname"><span class="pre">get_books_by_subject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#google_books_api_wrapper.models.BookSearchResultSet" title="google_books_api_wrapper.models.BookSearchResultSet"><span class="pre">BookSearchResultSet</span></a></span></span><a class="headerlink" href="#google_books_api_wrapper.api.GoogleBooksAPI.get_books_by_subject" title="Link to this definition"></a></dt>
+<dd><p>Retrieve books that match a subject or genre</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>subject</strong> (<em>str</em>) – Subject or Genre of desired Books</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A result set of Book items</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#google_books_api_wrapper.models.BookSearchResultSet" title="google_books_api_wrapper.models.BookSearchResultSet">BookSearchResultSet</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="google_books_api_wrapper.api.GoogleBooksAPI.search_book">
+<span class="sig-name descname"><span class="pre">search_book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_term</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isbn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">author</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">publisher</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#google_books_api_wrapper.models.BookSearchResultSet" title="google_books_api_wrapper.models.BookSearchResultSet"><span class="pre">BookSearchResultSet</span></a></span></span><a class="headerlink" href="#google_books_api_wrapper.api.GoogleBooksAPI.search_book" title="Link to this definition"></a></dt>
+<dd><p>Search for a book with optional filters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>search_term</strong> (<em>str</em><em>, </em><em>optional</em>) – General Search term relating to desired book, defaults to “”</p></li>
+<li><p><strong>isbn</strong> (<em>int</em><em>, </em><em>optional</em>) – ISBN Identifier, defaults to None</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – Book Title, defaults to None</p></li>
+<li><p><strong>author</strong> (<em>str</em><em>, </em><em>optional</em>) – Book Author(s), defaults to None</p></li>
+<li><p><strong>publisher</strong> (<em>str</em><em>, </em><em>optional</em>) – Book Publisher defaults to None</p></li>
+<li><p><strong>subject</strong> (<em>str</em><em>, </em><em>optional</em>) – Book Subject, defaults to None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A BookSearchResultSet objects</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#google_books_api_wrapper.models.BookSearchResultSet" title="google_books_api_wrapper.models.BookSearchResultSet">BookSearchResultSet</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="book-class">
+<h1>Book Class<a class="headerlink" href="#book-class" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="google_books_api_wrapper.models.Book">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">google_books_api_wrapper.models.</span></span><span class="sig-name descname"><span class="pre">Book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtitle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">publisher</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">published_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">date</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ISBN_13</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ISBN_10</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subjects</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">small_thumbnail</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">large_thumbnail</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#google_books_api_wrapper.models.Book" title="Link to this definition"></a></dt>
+<dd><p>Represents a Book object, data derived from Google Books Api Response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> (<em>str</em>) – Main title of the book</p></li>
+<li><p><strong>authors</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – Authors/Writers of the book</p></li>
+<li><p><strong>subtitle</strong> (<em>str</em><em>, </em><em>optional</em>) – Subtitle of the book, defaults to None</p></li>
+<li><p><strong>publisher</strong> (<em>str</em><em>, </em><em>optional</em>) – Book’s official publisher, defaults to None</p></li>
+<li><p><strong>published_date</strong> (<em>date</em><em>, </em><em>optional</em>) – Official book publication date, defaults to None</p></li>
+<li><p><strong>description</strong> (<em>str</em><em>, </em><em>optional</em>) – Overall description of the book, defaults to None</p></li>
+<li><p><strong>ISBN_13</strong> (<em>str</em><em>, </em><em>optional</em>) – Official ISBN-13 Identifier, defaults to None</p></li>
+<li><p><strong>ISBN_10</strong> (<em>str</em><em>, </em><em>optional</em>) – Official ISBN-10 Identifier, defaults to None</p></li>
+<li><p><strong>page_count</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of pages in book, defaults to None</p></li>
+<li><p><strong>categories</strong> (<em>list</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Book categories (e.g. horror, comedy, etc.), defaults to None</p></li>
+<li><p><strong>small_thumbnail</strong> (<em>str</em><em>, </em><em>optional</em>) – Small thumbnail img link from Google, defaults to None</p></li>
+<li><p><strong>large_thumbnail</strong> (<em>str</em><em>, </em><em>optional</em>) – Large thumbnail img link from Google, defaults to None</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="google_books_api_wrapper.models.Book.from_google_books_api_response_book_item">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_google_books_api_response_book_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_response_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#google_books_api_wrapper.models.Book" title="google_books_api_wrapper.models.Book"><span class="pre">Book</span></a></span></span><a class="headerlink" href="#google_books_api_wrapper.models.Book.from_google_books_api_response_book_item" title="Link to this definition"></a></dt>
+<dd><p>Generates a Book object from Google Books Web API response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>api_response_item</strong> (<em>HttpResult</em>) – Response item from hitting the Google Books API Endpoint</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Book Object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#google_books_api_wrapper.models.Book" title="google_books_api_wrapper.models.Book">Book</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="booksearchresultset-class">
+<h1>BookSearchResultSet Class<a class="headerlink" href="#booksearchresultset-class" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="google_books_api_wrapper.models.BookSearchResultSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">google_books_api_wrapper.models.</span></span><span class="sig-name descname"><span class="pre">BookSearchResultSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">books</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#google_books_api_wrapper.models.Book" title="google_books_api_wrapper.models.Book"><span class="pre">Book</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#google_books_api_wrapper.models.BookSearchResultSet" title="Link to this definition"></a></dt>
+<dd><p>Represents search results coming from the Google Books Web API</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>books</strong> (<em>list</em><em>[</em><a class="reference internal" href="#google_books_api_wrapper.models.Book" title="google_books_api_wrapper.models.Book"><em>Book</em></a><em>]</em><em>, </em><em>optional</em>) – A list of book objects, defaults to None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="google_books_api_wrapper.models.BookSearchResultSet.get_all_results">
+<span class="sig-name descname"><span class="pre">get_all_results</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#google_books_api_wrapper.models.Book" title="google_books_api_wrapper.models.Book"><span class="pre">Book</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#google_books_api_wrapper.models.BookSearchResultSet.get_all_results" title="Link to this definition"></a></dt>
+<dd><p>Returns a list of books returned for the search query</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of Book objects</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[<a class="reference internal" href="#google_books_api_wrapper.models.Book" title="google_books_api_wrapper.models.Book">Book</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="google_books_api_wrapper.models.BookSearchResultSet.get_best_match">
+<span class="sig-name descname"><span class="pre">get_best_match</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#google_books_api_wrapper.models.Book" title="google_books_api_wrapper.models.Book"><span class="pre">Book</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#google_books_api_wrapper.models.BookSearchResultSet.get_best_match" title="Link to this definition"></a></dt>
+<dd><p>Returns the closest match to the search query</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A Book object</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#google_books_api_wrapper.models.Book" title="google_books_api_wrapper.models.Book">Book</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="google_books_api_wrapper.models.BookSearchResultSet.total_results">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">total_results</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#google_books_api_wrapper.models.BookSearchResultSet.total_results" title="Link to this definition"></a></dt>
+<dd><p>Total results found for search query</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of results found</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="googlebookssearchparams-class">
+<h1>GoogleBooksSearchParams Class<a class="headerlink" href="#googlebookssearchparams-class" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="google_books_api_wrapper.models.GoogleBooksSearchParams">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">google_books_api_wrapper.models.</span></span><span class="sig-name descname"><span class="pre">GoogleBooksSearchParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isbn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">publisher</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">author</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_term</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#google_books_api_wrapper.models.GoogleBooksSearchParams" title="Link to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="google_books_api_wrapper.models.GoogleBooksSearchParams.generate">
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#google_books_api_wrapper.models.GoogleBooksSearchParams.generate" title="Link to this definition"></a></dt>
+<dd><p>Generates URL Query String based on item properties</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Query String</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-google_books_api_wrapper.exceptions">
+<span id="exceptions"></span><h1>Exceptions<a class="headerlink" href="#module-google_books_api_wrapper.exceptions" title="Link to this heading"></a></h1>
+<dl class="py exception">
+<dt class="sig sig-object py" id="google_books_api_wrapper.exceptions.GoogleBooksAPIException">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">google_books_api_wrapper.exceptions.</span></span><span class="sig-name descname"><span class="pre">GoogleBooksAPIException</span></span><a class="headerlink" href="#google_books_api_wrapper.exceptions.GoogleBooksAPIException" title="Link to this definition"></a></dt>
+<dd><p>Raised when there is an error establishing connection with Google API</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Daniel Krzeminski.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
